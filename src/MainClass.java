@@ -19,12 +19,12 @@ public class MainClass {
 		  String message = user.returnOutput(); 
 		  System.out.println(message);
 		  
-		 // printing firstname
+		 // printing firstName
 		  System.out.println(user.getFirstName() + " " + user.getLastName());
 		  
-		
-		
-
+		  //Custom getters and setters output
+		  System.out.println(user.getFullName());
+		  
 	}
 
-}
+	}

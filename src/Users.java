@@ -35,8 +35,13 @@ public class Users { // in classes we only define fields(things that we store) h
 		firstName = fn;
 	}
 	
-	public void setLastName(String ln) { // here we are not returning but giving an argument so we can used void
+	public void setLastName(String ln) { // we can also access public variables through setters
 		lastName = ln;
+	}
+	
+	//Custom getters and setters
+	public String getFullName() {
+		return getFirstName() + " " + lastName;
 	}
 	
 	
