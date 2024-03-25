@@ -20,6 +20,15 @@ public class LoopsinCustomTypes {
 		for(Users u : allUsers) {
 			System.out.println(u.getFullName());
 		}
+		
+		LoopsinCustomTypes m = new LoopsinCustomTypes();
+		m.printUser(allUsers.get(0));
+		
 	}
+	
+	// Custom Types as Arguments
+	public void printUser(Users u) {
+		u.getFullName();
+		}
 
 }

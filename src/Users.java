@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Users { // in classes we only define fields(things that we store) here their values are define where object is created
 	// fields	
@@ -44,5 +45,16 @@ public class Users { // in classes we only define fields(things that we store) h
 		return getFirstName() + " " + lastName;
 	}
 	
+	//Static Methods
+	public static void printUser(Users u) {
+		System.out.println(u.getFullName());
+	}
+	
+	//Static Methods on Lists
+	public static void printUsers(List<Users> users) {
+		for(Users u : users) {
+			System.out.println(u.getFullName());
+		}
+	}
 	
 }
