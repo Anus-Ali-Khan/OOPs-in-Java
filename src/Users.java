@@ -27,7 +27,7 @@ public class Users { // in classes we only define fields(things that we store) h
 		return firstName.toUpperCase();
 	}
 	
-	public String getLastName() {
+	public String getLastName() { // if we use return so we not use void but String,Integer(Data Types) 
 		return lastName.toUpperCase();
 	}
 	
@@ -55,6 +55,20 @@ public class Users { // in classes we only define fields(things that we store) h
 		for(Users u : users) {
 			System.out.println(u.getFullName());
 		}
+		
+	}
+	
+
+	//Methods Overloading - we can make same methods having arguments of different data types
+	public String output() {
+		return "Hi, my name is " + getFullName() + ".";
+	}
+	
+	public String output(boolean nice) {
+		if(nice) {
+			return "you are a beautiful person. - " + getFullName() + ".";  
+		}
+		return "You are a freak. - " + getFullName() + ".";
 	}
 	
 }
