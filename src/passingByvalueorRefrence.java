@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReturningCustomObjects {
+public class passingByvalueorRefrence {
 
 	public static void main(String[] args) {
 		
+
 		Users me = new Users();
 		me.setFirstName("Caleb");
 		me.setLastName("Curry");
@@ -17,20 +18,12 @@ public class ReturningCustomObjects {
 		allUsers.add(me);
 		allUsers.add(you);
 		
-		Users search = new Users();
-		search.setFirstName("Not");
-		search.setLastName("Me");
-		
-		Users found = Users.findUser(allUsers, search);
-		
-		//Since its printing the same object not copying it so if we change it the object will also changed
-		found.setFirstName("Sally");
-		
-		System.out.println(found);
 		
 		
+		Users.changeCrap(you);
+		System.out.println(you);
 		
-		
+
 	}
 
 }

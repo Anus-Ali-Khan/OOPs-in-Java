@@ -128,6 +128,11 @@ public class Users { // in classes we only define fields(things that we store) h
 		return null;
 	}
 	
+	//Passing by Value or Reference
+	public static void changeCrap(Users x) {
+//		x =new Users(); if we create new object then value does not change
+		x.setFirstName("Changed");
+	}
 	
 	
 	
