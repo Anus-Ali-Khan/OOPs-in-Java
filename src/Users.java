@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Objects;
 
 public class Users { // in classes we only define fields(things that we store) here their values are define where object is created
 	// fields	
@@ -24,7 +25,7 @@ public class Users { // in classes we only define fields(things that we store) h
 	// this is done through getters(gets the value) and setters(sets the values)
 	
 	public String getFirstName() {
-		return firstName.toUpperCase();
+		return firstName;
 	}
 	
 	public String getLastName() { // if we use return so we not use void but String,Integer(Data Types) 
@@ -33,7 +34,7 @@ public class Users { // in classes we only define fields(things that we store) h
 	
 	//since we have made firstName as private variable now so we can only access it through "setters"
 	public void setFirstName(String fn) { // here we are not returning but giving an argument so we can used void
-		firstName = fn;
+		firstName = fn.strip();
 	}
 	
 	public void setLastName(String ln) { // we can also access public variables through setters
@@ -70,5 +71,65 @@ public class Users { // in classes we only define fields(things that we store) h
 		}
 		return "You are a freak. - " + getFullName() + ".";
 	}
+	
+	//Searching a List for custom objects
+	public static int searchList(List<Users> users, String fn, String ln) {
+		return searchList(users, fn + " " + ln);
+	}
+	
+	public static int searchList(List<Users> users, String fullName ) {
+		for(int i=0; i<users.size(); i++) {
+			if(users.get(i).getFullName().equals(fullName)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	//Method Overriding - override a method by generating new method of same name
+	@Override
+	public String toString() {
+		return "Users [getFullName()=" + getFullName() + "]";
+	}
+
+	
+	//Override Equals
+	@Override
+	public int hashCode() {
+		return Objects.hash(firstName, lastName);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Users other = (Users) obj;
+		return Objects.equals(firstName, other.firstName) && Objects.equals(lastName, other.lastName);
+	}
+	
+	//Overload the search to take in a User Object or Custom data type
+	public static int searchList(List<Users> users, Users u){
+		return searchList(users, u.getFullName());
+		
+	}
+	
+	//Returning Custom Objects 
+	public static Users findUser(List<Users> users, Users u) {
+		for (Users user:users) {
+			if(user.equals(u)) {
+				return user;
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	
 	
 }
