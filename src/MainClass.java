@@ -25,6 +25,8 @@ public class MainClass {
 		  //Custom getters and setters output
 		  System.out.println(user.getFullName());
 		  
+		  
+		  
 	}
 
 	}
